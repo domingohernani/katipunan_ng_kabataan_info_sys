@@ -35,6 +35,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
+  font_awesome_flutter: ^10.7.0
 
 dev_dependencies:
   flutter_test:
@@ -73,12 +74,47 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
+  fonts:
+    - family: BeVietnamPro
+      fonts:
+        - asset: fonts/BeVietnamPro-Bold.ttf
+          weight: 700
+        - asset: fonts/BeVietnamPro-BoldItalic.ttf
+          weight: 700
+          style: italic
+        - asset: fonts/BeVietnamPro-ExtraBold.ttf
+          weight: 800
+        - asset: fonts/BeVietnamPro-ExtraBoldItalic.ttf
+          weight: 800
+          style: italic
+        - asset: fonts/BeVietnamPro-ExtraLight.ttf
+          weight: 200
+        - asset: fonts/BeVietnamPro-ExtraLightItalic.ttf
+          weight: 200
+          style: italic
+        - asset: fonts/BeVietnamPro-Italic.ttf
+          style: italic
+        - asset: fonts/BeVietnamPro-Light.ttf
+          weight: 300
+        - asset: fonts/BeVietnamPro-LightItalic.ttf
+          weight: 300
+          style: italic
+        - asset: fonts/BeVietnamPro-Medium.ttf
+          weight: 500
+        - asset: fonts/BeVietnamPro-MediumItalic.ttf
+          weight: 500
+          style: italic
+        - asset: fonts/BeVietnamPro-Regular.ttf
+        - asset: fonts/BeVietnamPro-SemiBold.ttf
+          weight: 600
+        - asset: fonts/BeVietnamPro-SemiBoldItalic.ttf
+          weight: 600
+          style: italic
+        - asset: fonts/BeVietnamPro-Thin.ttf
+          weight: 100
+        - asset: fonts/BeVietnamPro-ThinItalic.ttf
+          weight: 100
+          style: italic
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
