@@ -15,15 +15,11 @@ class Main extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle(
-          statusBarColor: Colors.white, // Change this to the desired color
-          statusBarBrightness:
-              Brightness.dark, // For iOS (light text color for dark background)
-          statusBarIconBrightness: Brightness
-              .dark, // For Android (light text color for dark background)
-          systemNavigationBarColor:
-              Colors.white, // Change this to the desired color
-          systemNavigationBarIconBrightness:
-              Brightness.dark, // For Android (light icons for dark background)
+          statusBarColor: Colors.white,
+          statusBarBrightness: Brightness.dark,
+          statusBarIconBrightness: Brightness.dark, //
+          systemNavigationBarColor: Colors.white,
+          systemNavigationBarIconBrightness: Brightness.dark,
         ),
         child: Login(),
       ),
