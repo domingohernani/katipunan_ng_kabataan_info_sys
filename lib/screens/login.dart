@@ -9,14 +9,11 @@ class Login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double currentWidth = MediaQuery.of(context).size.width;
-
     return Scaffold(
-      appBar: AppBar(
-        title: Text(currentWidth.toString()),
-      ),
       body: LayoutLogin(
-        mobileBody: LoginMobileBody(),
+        mobileBody: LoginMobileBody(
+          buildContext: context,
+        ),
         tabletBody: LoginTabletBody(),
         desktopBody: LoginDesktopBody(),
       ),

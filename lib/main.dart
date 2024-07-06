@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kk_information_system/screens/home.dart';
+import 'package:kk_information_system/screens/login.dart';
 
 void main() {
   runApp(const Main());
@@ -12,7 +12,7 @@ class Main extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      home: Login(),
     );
   }
 }
