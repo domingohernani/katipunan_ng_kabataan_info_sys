@@ -10,12 +10,14 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: LayoutLogin(
-        mobileBody: LoginMobileBody(
-          buildContext: context,
+      body: SafeArea(
+        child: LayoutLogin(
+          mobileBody: LoginMobileBody(
+            buildContext: context,
+          ),
+          tabletBody: LoginTabletBody(),
+          desktopBody: LoginDesktopBody(),
         ),
-        tabletBody: LoginTabletBody(),
-        desktopBody: LoginDesktopBody(),
       ),
     );
   }
