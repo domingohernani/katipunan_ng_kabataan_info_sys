@@ -64,7 +64,7 @@ class _LoginDesktopBodyState extends State<LoginDesktopBody> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
-                    "Welcome!",
+                    "Welcome Back!",
                     style: TextStyle(
                       fontFamily: "Poppins",
                       fontWeight: FontWeight.w700,
