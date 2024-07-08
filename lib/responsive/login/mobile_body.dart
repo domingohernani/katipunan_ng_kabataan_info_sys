@@ -154,7 +154,8 @@ class _LoginMobileBodyState extends State<LoginMobileBody> {
                   fontWeight: FontWeight.w400,
                   fontSize: 14,
                 ),
-                backgroundColor: const Color(0xFF0E9F6E), // Background color
+                backgroundColor:
+                    Theme.of(context).primaryColor, // Background color
                 padding: const EdgeInsets.symmetric(
                     vertical: 20.0, horizontal: 16.0), // Button padding
                 shape: RoundedRectangleBorder(
