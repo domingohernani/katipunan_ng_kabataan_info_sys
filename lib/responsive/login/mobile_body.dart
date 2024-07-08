@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:kk_information_system/components/toast_notification.dart';
 import 'package:kk_information_system/services/auth_service.dart';
 import 'package:provider/provider.dart';
 
@@ -22,10 +23,17 @@ class _LoginMobileBodyState extends State<LoginMobileBody> {
     print(emailCtrl.text);
     print(passwordCtrl.text);
 
-    final authService = Provider.of<AuthService>(context, listen: false);
-
-    await authService.signin(
-        email: emailCtrl.text, password: passwordCtrl.text, context: context);
+    if (emailCtrl.text.toString().trim() != "" &&
+        passwordCtrl.text.toString().trim() != "") {
+      final authService = Provider.of<AuthService>(context, listen: false);
+      await authService.signin(
+          email: emailCtrl.text, password: passwordCtrl.text, context: context);
+    } else {
+      String title = "Missing Information";
+      String body = "Both fields are necessary to complete the login process";
+      ToastNotification toast = ToastNotification(title: title, body: body);
+      toast.error();
+    }
   }
 
   @override
