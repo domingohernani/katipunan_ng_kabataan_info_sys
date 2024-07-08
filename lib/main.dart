@@ -6,6 +6,7 @@ import 'package:kk_information_system/screens/login.dart';
 import 'package:kk_information_system/services/auth_service.dart';
 import 'package:kk_information_system/services/auth_wrapper.dart';
 import 'package:provider/provider.dart';
+import 'package:toastification/toastification.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,20 +23,22 @@ class Main extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [ChangeNotifierProvider(create: (_) => AuthService())],
-      child: MaterialApp(
-        theme: ThemeData(
-          primaryColor: Color(0xFF0E9F6E),
-        ),
-        debugShowCheckedModeBanner: false,
-        home: AnnotatedRegion<SystemUiOverlayStyle>(
-          value: SystemUiOverlayStyle(
-            statusBarColor: Colors.white,
-            statusBarBrightness: Brightness.dark,
-            statusBarIconBrightness: Brightness.dark, //
-            systemNavigationBarColor: Colors.white,
-            systemNavigationBarIconBrightness: Brightness.dark,
+      child: ToastificationWrapper(
+        child: MaterialApp(
+          theme: ThemeData(
+            primaryColor: Color(0xFF0E9F6E),
           ),
-          child: AuthWrapper(),
+          debugShowCheckedModeBanner: false,
+          home: AnnotatedRegion<SystemUiOverlayStyle>(
+            value: SystemUiOverlayStyle(
+              statusBarColor: Colors.white,
+              statusBarBrightness: Brightness.dark,
+              statusBarIconBrightness: Brightness.dark, //
+              systemNavigationBarColor: Colors.white,
+              systemNavigationBarIconBrightness: Brightness.dark,
+            ),
+            child: AuthWrapper(),
+          ),
         ),
       ),
     );

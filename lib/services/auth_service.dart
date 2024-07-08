@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+import 'package:kk_information_system/components/toast_notification.dart';
 import 'package:kk_information_system/screens/home.dart';
 
 class AuthService with ChangeNotifier {
@@ -30,33 +30,26 @@ class AuthService with ChangeNotifier {
       //   MaterialPageRoute(builder: (BuildContext context) => const Home()),
       // );
     } on FirebaseAuthException catch (e) {
-      String message = "";
+      String title = "Error";
+      String body = "";
+
       if (e.code == "weak-password") {
-        message = "The provided password is too weak.";
+        title = "Weak Password";
+        body = "The provided password is too weak.";
       } else if (e.code == "email-already-in-use") {
-        message = "An account with that email already exists.";
+        title = "Email Already In Use";
+        body = "An account with that email already exists.";
       } else {
-        message = e.message!;
+        title = "Unexpected Error";
+        body = "An unknown error occurred.";
       }
-      Fluttertoast.showToast(
-        msg: message,
-        toastLength: Toast.LENGTH_LONG,
-        gravity: ToastGravity.SNACKBAR,
-        timeInSecForIosWeb: 1,
-        backgroundColor: Colors.black,
-        textColor: Colors.white,
-        fontSize: 16.0,
-      );
+      ToastNotification toast = ToastNotification(title: title, body: body);
+      toast.warning();
     } catch (e) {
-      Fluttertoast.showToast(
-        msg: "The account could not be created due to an error.",
-        toastLength: Toast.LENGTH_LONG,
-        gravity: ToastGravity.SNACKBAR,
-        timeInSecForIosWeb: 1,
-        backgroundColor: Colors.black,
-        textColor: Colors.white,
-        fontSize: 16.0,
-      );
+      String title = "Unexpected Error";
+      String body = "The account could not be created due to an error.";
+      ToastNotification toast = ToastNotification(title: title, body: body);
+      toast.warning();
     }
   }
 
@@ -72,33 +65,28 @@ class AuthService with ChangeNotifier {
       );
       // Do not navigate from here, let AuthWrapper handle it
     } on FirebaseAuthException catch (e) {
-      String message = "";
+      String title = "Error";
+      String body = "";
       if (e.code == "user-not-found") {
-        message = "No account found for the provided email.";
+        title = "User Not Found";
+        body = "No account found for the provided email.";
       } else if (e.code == "wrong-password") {
-        message = "The email and/or password you entered is incorrect.";
+        title = "Incorrect Email and/or Password";
+        body = "The email and/or password you entered is incorrect.";
       } else {
-        message = e.message!;
+        title = "Unexpected Error";
+        body = e.message ?? "An unknown error occurred.";
+        body += " Please check your credentials";
       }
-      Fluttertoast.showToast(
-        msg: message,
-        toastLength: Toast.LENGTH_LONG,
-        gravity: ToastGravity.SNACKBAR,
-        timeInSecForIosWeb: 1,
-        backgroundColor: Colors.black,
-        textColor: Colors.white,
-        fontSize: 16.0,
-      );
+      print("Code" + e.code);
+      print("Message" + e.message!);
+      ToastNotification toast = ToastNotification(title: title, body: body);
+      toast.warning();
     } catch (e) {
-      Fluttertoast.showToast(
-        msg: "The account could not be created due to an error.",
-        toastLength: Toast.LENGTH_LONG,
-        gravity: ToastGravity.SNACKBAR,
-        timeInSecForIosWeb: 1,
-        backgroundColor: Colors.black,
-        textColor: Colors.white,
-        fontSize: 16.0,
-      );
+      String title = "Unexpected Error";
+      String body = "The account could not be accessed because of an error.";
+      ToastNotification toast = ToastNotification(title: title, body: body);
+      toast.warning();
     }
   }
 
@@ -110,7 +98,6 @@ class AuthService with ChangeNotifier {
 
   void _onAuthStateChanged(User? user) {
     _user = user;
-    print('Auth State Changed: $user');
     notifyListeners();
   }
 }

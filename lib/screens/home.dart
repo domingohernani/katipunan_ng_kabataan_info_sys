@@ -46,7 +46,7 @@ class _HomeState extends State<Home> {
             tabs: [
               Tab(
                 child: FaIcon(
-                  FontAwesomeIcons.chartPie,
+                  FontAwesomeIcons.chartSimple,
                   size: 20,
                 ),
               ),
