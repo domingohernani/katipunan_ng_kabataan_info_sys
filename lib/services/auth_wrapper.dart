@@ -5,14 +5,16 @@ import 'package:provider/provider.dart';
 import 'auth_service.dart';
 
 class AuthWrapper extends StatelessWidget {
+  const AuthWrapper({super.key});
+
   @override
   Widget build(BuildContext context) {
     final authService = Provider.of<AuthService>(context);
 
     if (authService.user == null) {
-      return Login();
+      return const Login();
     } else {
-      return Home();
+      return const Home();
     }
   }
 }

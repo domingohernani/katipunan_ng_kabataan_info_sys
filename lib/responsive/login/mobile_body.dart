@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kk_information_system/components/toast_notification.dart';
 import 'package:kk_information_system/services/auth_service.dart';
@@ -20,9 +18,6 @@ class _LoginMobileBodyState extends State<LoginMobileBody> {
   TextEditingController passwordCtrl = TextEditingController();
 
   void loginBtnClicked() async {
-    print(emailCtrl.text);
-    print(passwordCtrl.text);
-
     if (emailCtrl.text.toString().trim() != "" &&
         passwordCtrl.text.toString().trim() != "") {
       final authService = Provider.of<AuthService>(context, listen: false);
@@ -83,7 +78,8 @@ class _LoginMobileBodyState extends State<LoginMobileBody> {
             const SizedBox(width: 10),
             Container(
               decoration: BoxDecoration(
-                color: Color.fromARGB(255, 245, 245, 245), // Background color
+                color: const Color.fromARGB(
+                    255, 245, 245, 245), // Background color
                 borderRadius: BorderRadius.circular(5.0), // Rounded corners
               ),
               child: TextFormField(
@@ -123,7 +119,8 @@ class _LoginMobileBodyState extends State<LoginMobileBody> {
             ),
             Container(
               decoration: BoxDecoration(
-                color: Color.fromARGB(255, 245, 245, 245), // Background color
+                color: const Color.fromARGB(
+                    255, 245, 245, 245), // Background color
                 borderRadius: BorderRadius.circular(10.0), // Rounded corners
               ),
               child: TextFormField(
@@ -181,7 +178,7 @@ class _LoginMobileBodyState extends State<LoginMobileBody> {
                   SizedBox(width: 8), // Space between icon and text
                   Text(
                     "Log In",
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontFamily: "Poppins",
                       fontWeight: FontWeight.w600,
                       fontSize: 14,

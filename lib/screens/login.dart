@@ -14,7 +14,7 @@ class Login extends StatelessWidget {
           mobileBody: LoginMobileBody(
             buildContext: context,
           ),
-          desktopBody: LoginDesktopBody(),
+          desktopBody: const LoginDesktopBody(),
         ),
       ),
     );

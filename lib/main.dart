@@ -2,7 +2,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kk_information_system/firebase_options.dart';
-import 'package:kk_information_system/screens/login.dart';
 import 'package:kk_information_system/services/auth_service.dart';
 import 'package:kk_information_system/services/auth_wrapper.dart';
 import 'package:provider/provider.dart';
@@ -26,10 +25,10 @@ class Main extends StatelessWidget {
       child: ToastificationWrapper(
         child: MaterialApp(
           theme: ThemeData(
-            primaryColor: Color(0xFF0E9F6E),
+            primaryColor: const Color(0xFF0E9F6E),
           ),
           debugShowCheckedModeBanner: false,
-          home: AnnotatedRegion<SystemUiOverlayStyle>(
+          home: const AnnotatedRegion<SystemUiOverlayStyle>(
             value: SystemUiOverlayStyle(
               statusBarColor: Colors.white,
               statusBarBrightness: Brightness.dark,

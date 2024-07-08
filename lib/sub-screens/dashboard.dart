@@ -11,12 +11,12 @@ class Dashboard extends StatelessWidget {
         onPressed: () {
           toastification.show(
             context: context, // optional if you use ToastificationWrapper
-            title: Text('Hello, world!'),
+            title: const Text('Hello, world!'),
             autoCloseDuration: const Duration(seconds: 5),
             applyBlurEffect: true,
           );
         },
-        child: Text("Show"),
+        child: const Text("Show"),
       ),
     );
   }

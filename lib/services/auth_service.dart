@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:kk_information_system/components/toast_notification.dart';
-import 'package:kk_information_system/screens/home.dart';
 
 class AuthService with ChangeNotifier {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -77,8 +76,6 @@ class AuthService with ChangeNotifier {
         title = "Unexpected Error";
         body = e.message ?? "An unknown error occurred.";
       }
-      print("Code" + e.code);
-      print("Message" + e.message!);
       ToastNotification toast = ToastNotification(title: title, body: body);
       toast.warning();
     } catch (e) {

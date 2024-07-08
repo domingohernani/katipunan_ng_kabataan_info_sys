@@ -21,7 +21,7 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    final authService = Provider.of<AuthService>(context);
+    Provider.of<AuthService>(context);
     return DefaultTabController(
       length: 3, // number of tabs
       child: Scaffold(
@@ -33,7 +33,7 @@ class _HomeState extends State<Home> {
           actions: [
             IconButton(
               onPressed: logout,
-              icon: FaIcon(
+              icon: const FaIcon(
                 FontAwesomeIcons.arrowRightFromBracket,
                 size: 16,
               ),
@@ -43,7 +43,7 @@ class _HomeState extends State<Home> {
             labelColor: Theme.of(context).primaryColor,
             unselectedLabelColor: Colors.black87,
             indicatorColor: Theme.of(context).primaryColor,
-            tabs: [
+            tabs: const [
               Tab(
                 child: FaIcon(
                   FontAwesomeIcons.chartSimple,
@@ -65,7 +65,7 @@ class _HomeState extends State<Home> {
             ],
           ),
         ),
-        body: TabBarView(
+        body: const TabBarView(
           children: [
             Center(
               child: Dashboard(),
