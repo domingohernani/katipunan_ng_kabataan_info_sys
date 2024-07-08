@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:kk_information_system/responsive/login/desktop_body.dart';
 import 'package:kk_information_system/responsive/login/layout_login.dart';
 import 'package:kk_information_system/responsive/login/mobile_body.dart';
-import 'package:kk_information_system/responsive/login/tablet_body.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -15,7 +14,6 @@ class Login extends StatelessWidget {
           mobileBody: LoginMobileBody(
             buildContext: context,
           ),
-          tabletBody: LoginTabletBody(),
           desktopBody: LoginDesktopBody(),
         ),
       ),
