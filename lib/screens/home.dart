@@ -3,7 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kk_information_system/services/auth_service.dart';
 import 'package:kk_information_system/sub-screens/account.dart';
 import 'package:kk_information_system/sub-screens/dashboard.dart';
-import 'package:kk_information_system/sub-screens/youth.dart';
+import 'package:kk_information_system/sub-screens/records.dart';
 import 'package:provider/provider.dart';
 
 class Home extends StatefulWidget {
@@ -52,7 +52,7 @@ class _HomeState extends State<Home> {
               ),
               Tab(
                 child: FaIcon(
-                  FontAwesomeIcons.peopleGroup,
+                  FontAwesomeIcons.solidFileLines,
                   size: 20,
                 ),
               ),
@@ -71,7 +71,7 @@ class _HomeState extends State<Home> {
               child: Dashboard(),
             ),
             Center(
-              child: Youth(),
+              child: Records(),
             ),
             Center(
               child: Account(),
