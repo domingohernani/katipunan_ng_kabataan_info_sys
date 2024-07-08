@@ -23,6 +23,9 @@ class Main extends StatelessWidget {
     return MultiProvider(
       providers: [ChangeNotifierProvider(create: (_) => AuthService())],
       child: MaterialApp(
+        theme: ThemeData(
+          primaryColor: Color(0xFF0E9F6E),
+        ),
         debugShowCheckedModeBanner: false,
         home: AnnotatedRegion<SystemUiOverlayStyle>(
           value: SystemUiOverlayStyle(
