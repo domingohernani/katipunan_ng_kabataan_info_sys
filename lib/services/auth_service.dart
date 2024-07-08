@@ -76,7 +76,6 @@ class AuthService with ChangeNotifier {
       } else {
         title = "Unexpected Error";
         body = e.message ?? "An unknown error occurred.";
-        body += " Please check your credentials";
       }
       print("Code" + e.code);
       print("Message" + e.message!);
